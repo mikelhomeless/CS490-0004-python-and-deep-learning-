@@ -1,4 +1,4 @@
-# 5)
+# 5
 #   a)
 # Soln:
 # Dataset: Car Evaluation Data Set from UC Irvine Machine Learning Repository

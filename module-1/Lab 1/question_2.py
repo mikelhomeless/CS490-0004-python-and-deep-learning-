@@ -5,7 +5,7 @@ student_list = [
     ('John', ('Physics', 80)) ,
     ('Daniel', ('Science', 90)),
     ('John', ('Science', 95)),
-    ('Mark',('Maths', 100)),
+    ('Mark', ('Maths', 100)),
     ('Daniel', ('History', 75)),
     ('Mark', ('Social', 95))
 ]
