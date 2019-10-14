@@ -1,19 +1,23 @@
 # 1) soln:
-temp = " "
-dict = {}
-for j in range(len(str)):
-   for i in range (j, len(str)):
-       if not (str[i] in temp):
-          temp += str[i]
-      else:
-      dict[temp] = len(temp)
-      temp = ''
-      break
-max_val = max(dict.values())
-list1=[]
-for key, val in dict.items();
-  if max_val == val:
-     list1.append((key, val))
+
+
+a=input('Please type the string')
+j=0
+
+while((j)<len(a)):
+    i=0
+    while(i<=j):
+        if(a[i-1]==a[j] and i!=0):
+            a=a[:j]+a[j+1:]
+
+            j=j-1
+            break;
+        i=i+1
+    j=j+1
+print(a)
+
+
+
 
 
 
