@@ -12,6 +12,8 @@ word_tokens = nltk.word_tokenize(text)
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 lem_words = [lemmatizer.lemmatize(word) for word in word_tokens]
+# first 10
+print(lem_words[:10])
 
 # find all trigrams
 from nltk.util import trigrams
