@@ -9,12 +9,12 @@ warnings.filterwarnings("ignore")
 
 dataset = pd.read_csv('CC.csv')
 
-##handling missing value
-data = dataset.select_dtypes(include=[np.number]).interpolate().dropna()
 
 
 x = data.iloc[:,1:]
 # y = dataset.iloc[:,-1]
+
+#handling missing value by filling in with an average value
 
 z = x.apply(lambda x: x.fillna(x.mean()),axis=0)
 
