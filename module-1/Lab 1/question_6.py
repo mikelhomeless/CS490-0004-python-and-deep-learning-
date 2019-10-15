@@ -11,7 +11,7 @@ dataset = pd.read_csv('CC.csv')
 
 
 
-x = data.iloc[:,1:]
+x = dataset.iloc[:,1:]
 # y = dataset.iloc[:,-1]
 
 #handling missing value by filling in with an average value
