@@ -1,4 +1,5 @@
- import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+import numpy as np
 
 import pandas as pd
 import seaborn as sns
@@ -7,7 +8,12 @@ import warnings
 warnings.filterwarnings("ignore")
 
 dataset = pd.read_csv('CC.csv')
-x = dataset.iloc[:,1:]
+
+##handling missing value
+data = dataset.select_dtypes(include=[np.number]).interpolate().dropna()
+
+
+x = data.iloc[:,1:]
 # y = dataset.iloc[:,-1]
 
 z = x.apply(lambda x: x.fillna(x.mean()),axis=0)
@@ -31,6 +37,8 @@ plt.title('the elbow method')
 plt.xlabel('Number of Clusters')
 plt.ylabel('Wcss')
 plt.show()
+
+print("Based on the Elbow method K=3 is the best")
 
 #Silhouette score
 # predict the cluster for each data point
