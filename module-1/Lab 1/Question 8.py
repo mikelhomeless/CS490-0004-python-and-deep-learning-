@@ -5,18 +5,22 @@ import matplotlib.pyplot as plt
 
 train = pd.read_csv('winequality-red.csv')
 
-##handling missing value
+#handling missing value by filling in with an average value
 data = train.select_dtypes(include=[np.number]).interpolate().dropna()
 
 ##Build a linear model
 y = np.log(train.quality)
 X = data.drop(['quality'], axis=1)
+Z = data.drop(['alcohol'],axis=1)
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(
                                     X, y, random_state=42, test_size=.33)
 
+
 from sklearn import linear_model
 lr = linear_model.LinearRegression()
+
+
 model = lr.fit(X_train, y_train)
 
 ##Evaluate the performance and visualize results
