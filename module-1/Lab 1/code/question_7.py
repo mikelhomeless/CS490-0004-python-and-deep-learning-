@@ -1,3 +1,4 @@
+# Question 7
 file_name = input('Enter file path you want to open: ')
 
 # the test file was converted to utf-8
