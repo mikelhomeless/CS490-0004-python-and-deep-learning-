@@ -53,7 +53,7 @@ history=model.fit(X_train,y_train, epochs=5, verbose=True, validation_data=(X_te
 
 # Question 3
 newsgroups_train =fetch_20newsgroups(subset='train', shuffle=True)
-tokenizer = Tokenizer()
+tokenizer = Tokenizer(num_words=500)
 tokenizer.fit_on_texts(newsgroups_train.data)
 sentences = tokenizer.texts_to_matrix(newsgroups_train.data)
 y = newsgroups_train.target
