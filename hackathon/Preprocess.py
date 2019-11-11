@@ -5,11 +5,11 @@ from datetime import datetime
 
 # map string data to numerical representation
 def codify_job_result(dataset):
-    dataset['Job Result'] = dataset['Job Result'].map({'SUCCESS': 0, 'FAILURE': 1, 'CANCELLED': 2})
+    dataset['Job Result'] = dataset['Job Result'].map({'SUCCESS': 0, 'FAILURE': 1, 'CANCELLED': 2}).astype(int)
 
 # map string data to numerical representation
 def codify_products(dataset):
-    dataset['Product Name'] = dataset['Product Name'].map({'Product 1': 1, 'Product 2': 2, 'Product 3': 3, 'Product 4': 4, 'Product 5': 5})
+    dataset['Product Name'] = dataset['Product Name'].map({'Product 1': 1, 'Product 2': 2, 'Product 3': 3, 'Product 4': 4, 'Product 5': 5}).astype(int)
 
 # create a column on the dataset for the duration of the job
 def add_duration(dataset):
@@ -47,6 +47,6 @@ codify_job_result(update_dataset)
 codify_products(update_dataset)
 add_duration(update_dataset)
 update_dataset.drop(['Job Creation Time', 'Job Completion Time'], axis=1)
-update_dataset['Component Being updated'] = update_dataset['Component Being updated'].map({'Component 1': 1, 'Component 2': 2, 'Component 3': 3, 'Component 4': 4, 'Component 5': 5})
+update_dataset['Component Being updated'] = update_dataset['Component Being updated'].map({'Component 1': 1, 'Component 2': 2, 'Component 3': 3, 'Component 4': 4, 'Component 5': 5}).astype(int)
 
 
